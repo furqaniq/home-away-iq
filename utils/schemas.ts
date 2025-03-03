@@ -84,5 +84,11 @@ export const propertySchema = z.object({
     baths: z.coerce.number().int().min(0, {
       message: 'bahts amount must be a positive number.',
     }),
-    amenities: z.string(),
+    amenities: z.string(), 
+  });
+
+  export const createReviewSchema = z.object({
+    propertyId: z.string(),
+    rating: z.coerce.number().int().min(1).max(5),
+    comment: z.string().min(10).max(1000),
   });
