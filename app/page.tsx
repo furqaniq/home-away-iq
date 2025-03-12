@@ -4,6 +4,8 @@ import PropertiesContainer from '@/components/home/PropertiesContainer';
 import { Suspense } from 'react';
 import LoadingCards from '@/components/card/LoadingCards';
 
+export const dynamic = 'force-dynamic';
+
 function HomePage({searchParams,}:{searchParams: { category?: string; search?: string };}) {
 
   return (
