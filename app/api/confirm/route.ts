@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import { NextResponse, type NextRequest } from 'next/server';
 import db from '@/utils/db';
 
-export const GET = async (req: NextResponse) => {
+export const GET = async (req: NextRequest) => {
     const { searchParams } = new URL(req.url);
     const session_id = searchParams.get('session_id') as string;
 
@@ -21,7 +21,7 @@ export const GET = async (req: NextResponse) => {
         });
     } catch (error) {
         console.log(error);
-        return NextResponse.json(null, {
+        return Response.json(null, {
             status: 500,
             statusText: 'Internal Server Error',
         });
