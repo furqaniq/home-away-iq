@@ -46,7 +46,7 @@ async function RentalsPage() {
               const {id:propertyId, name, price} = rental
               const {totalNightsSum, orderTotalSum} = rental
               return (
-                <TableRow>
+                <TableRow key={propertyId}>
                   <TableCell>
                     <Link href={`/properties/${propertyId}`} className='underline text-muted-foreground tracking-wide'>
                      {name} 
